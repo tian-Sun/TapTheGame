@@ -7,6 +7,7 @@ import SearchBar from '@/components/SearchBar';
 import GameFilter from '@/components/GameFilter';
 import GameSection from '@/components/GameSection';
 import Footer from '@/components/Footer';
+import AdSense from '@/components/AdSense';
 import { games, type Game } from '@/lib/games';
 
 export default function HomePage() {
@@ -286,6 +287,20 @@ export default function HomePage() {
               className="bg-muted/20"
             />
 
+            {/* Ad Banner 1 */}
+            {/* <section className="py-8 bg-background">
+              <div className="container-custom">
+                <div className="flex justify-center">
+                  <AdSense 
+                    adSlot=""
+                    adFormat="horizontal"
+                    style={{ display: 'block', width: '728px', height: '90px' }}
+                    className="mx-auto"
+                  />
+                </div>
+              </div>
+            </section> */}
+
             {/* Trending Games */}
             <GameSection
               title="📈 Trending Games"
@@ -303,6 +318,20 @@ export default function HomePage() {
               viewMoreHref="/category/io"
               className="bg-muted/20"
             />
+
+            {/* Ad Rectangle 1 */}
+            {/* <section className="py-8 bg-background">
+              <div className="container-custom">
+                <div className="flex justify-center">
+                  <AdSense 
+                    adSlot=""
+                    adFormat="rectangle"
+                    style={{ display: 'block', width: '336px', height: '280px' }}
+                    className="mx-auto"
+                  />
+                </div>
+              </div>
+            </section> */}
 
             {/* Casual Games */}
             <GameSection
@@ -349,6 +378,19 @@ export default function HomePage() {
               className="bg-background"
             />
 
+            {/* Ad Responsive Bottom */}
+            {/* <section className="py-12 bg-muted/20">
+              <div className="container-custom">
+                <div className="flex justify-center">
+                  <AdSense 
+                    adSlot=""
+                    adFormat="auto"
+                    style={{ display: 'block', minHeight: '250px', maxWidth: '970px' }}
+                    className="mx-auto w-full max-w-4xl"
+                  />
+                </div>
+              </div>
+            </section> */}
 
             {/* Game Selection Description */}
             <section className="py-16 bg-card">

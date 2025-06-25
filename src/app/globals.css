@@ -321,3 +321,41 @@
     box-shadow: none !important;
   }
 }
+
+/* AdSense 广告样式 */
+.adsense-container {
+  @apply w-full flex justify-center items-center;
+  min-height: 50px; /* 确保有最小高度 */
+}
+
+.adsense-container .adsbygoogle {
+  @apply mx-auto;
+}
+
+/* 响应式广告调整 */
+@media (max-width: 768px) {
+  .adsense-container .adsbygoogle[data-ad-format="horizontal"] {
+    width: 320px !important;
+    height: 50px !important;
+  }
+  
+  .adsense-container .adsbygoogle[data-ad-format="rectangle"] {
+    width: 300px !important;
+    height: 250px !important;
+  }
+}
+
+/* 广告加载中的占位样式 */
+.adsense-container .adsbygoogle:empty {
+  @apply bg-muted/30 border border-border rounded-md;
+  position: relative;
+}
+
+.adsense-container .adsbygoogle:empty::after {
+  content: "Advertisement";
+  @apply text-muted-foreground text-sm;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
