@@ -1,0 +1,11 @@
+# ads.txt file for TapTheGame Web
+# This file authorizes who can sell ads on this website
+
+# Google AdSense
+google.com, ca-pub-5851231098067394, DIRECT, f08c47fec0942fa0
+
+# Google Ad Manager (if you use it in the future)
+# google.com, ca-pub-5851231098067394, DIRECT, f08c47fec0942fa0
+
+# Contact information (optional but recommended)
+# contact=wendy.1031ht@gmail.com 
