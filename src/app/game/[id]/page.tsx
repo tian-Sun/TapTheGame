@@ -9,6 +9,14 @@ import Footer from '@/components/Footer';
 import { games, type Game } from '@/lib/games';
 import GamePlayer from './GamePlayer';
 
+export const dynamic = 'force-static';
+
+export function generateStaticParams() {
+  return games.map((game) => ({
+    id: game.id,
+  }));
+}
+
 interface GamePageProps {
   params: Promise<{
     id: string;

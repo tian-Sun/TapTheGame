@@ -57,13 +57,13 @@
    ```
 
 3. **Run development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   bun dev
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+bun dev
+```
 
 4. **Open in browser**
    Navigate to [http://localhost:3000](http://localhost:3000)

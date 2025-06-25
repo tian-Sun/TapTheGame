@@ -94,15 +94,15 @@ export default function Footer() {
             {gameCategories
               .filter(category => category.id !== 'all') // 排除"All Games"
               .map((category) => (
-                <Link
+              <Link
                   key={category.id}
                   href={`/category/${category.id}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center space-x-1"
-                >
+              >
                   <span>{category.icon}</span>
                   <span>{category.name}</span>
-                </Link>
-              ))}
+              </Link>
+            ))}
           </div>
         </div>
 

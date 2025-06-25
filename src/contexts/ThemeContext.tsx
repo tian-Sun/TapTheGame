@@ -20,25 +20,25 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     
     // 确保在客户端环境中运行
     if (typeof window !== 'undefined') {
-      // 从localStorage读取主题设置
-      const savedTheme = localStorage.getItem('theme') as Theme;
-      if (savedTheme) {
-        setTheme(savedTheme);
-      } else {
-        // 检查系统偏好
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setTheme(prefersDark ? 'dark' : 'light');
+    // 从localStorage读取主题设置
+    const savedTheme = localStorage.getItem('theme') as Theme;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      // 检查系统偏好
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
       }
     }
   }, []);
 
   useEffect(() => {
     if (mounted && typeof window !== 'undefined') {
-      // 应用主题到document
+    // 应用主题到document
       const html = document.documentElement;
       html.classList.remove('light', 'dark');
       html.classList.add(theme);
-      localStorage.setItem('theme', theme);
+    localStorage.setItem('theme', theme);
       
       console.log('Theme applied to HTML element:', theme);
       console.log('HTML classes:', html.className);

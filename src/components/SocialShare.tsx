@@ -204,7 +204,7 @@ export default function SocialShare({ game, className = '' }: SocialShareProps) 
               </div>
               <p className="text-xs text-muted-foreground text-center">
                 Share this game with your friends and play together!
-              </p>
+                </p>
             </div>
 
             {/* 二维码分享 */}
