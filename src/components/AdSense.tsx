@@ -14,7 +14,7 @@ interface AdSenseProps {
 // 声明全局 adsbygoogle 对象
 declare global {
   interface Window {
-    adsbygoogle: any[];
+    adsbygoogle: Array<Record<string, unknown>>;
   }
 }
 
