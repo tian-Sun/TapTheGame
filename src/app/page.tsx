@@ -359,21 +359,21 @@ export default function HomePage() {
                     <div>
                       <p className="text-muted-foreground mb-4">
                         Discover amazing HTML5 games that run instantly in your browser. Experience popular multiplayer games like
-                        <a href="/game/shell-shockers" className="text-primary hover:underline mx-1">Shell Shockers</a>,
-                        <a href="/game/smash-karts" className="text-primary hover:underline mx-1">Smash Karts</a>, and
-                        <a href="/game/krunker" className="text-primary hover:underline mx-1">Krunker</a>,
+                        <Link href="/game/shell-shockers" className="text-primary hover:underline mx-1">Shell Shockers</Link>,
+                        <Link href="/game/smash-karts" className="text-primary hover:underline mx-1">Smash Karts</Link>, and
+                        <Link href="/game/krunker" className="text-primary hover:underline mx-1">Krunker</Link>,
                         or enjoy casual games like
-                        <a href="/game/dogeminer" className="text-primary hover:underline mx-1">Dogeminer</a> and
-                        <a href="/game/drift-boss" className="text-primary hover:underline mx-1">Drift Boss</a>.
+                        <Link href="/game/dogeminer" className="text-primary hover:underline mx-1">Dogeminer</Link> and
+                        <Link href="/game/drift-boss" className="text-primary hover:underline mx-1">Drift Boss</Link>.
                       </p>
                     </div>
                     <div>
                       <p className="text-muted-foreground mb-4">
                         Our collection covers everything from
-                        <a href="/category/io" className="text-primary hover:underline mx-1">IO Games</a> and
-                        <a href="/category/racing" className="text-primary hover:underline mx-1">Racing Games</a> to
-                        <a href="/category/clicker" className="text-primary hover:underline mx-1">Clicker Games</a> and
-                        <a href="/category/car" className="text-primary hover:underline mx-1">Car Games</a>,
+                        <Link href="/category/io" className="text-primary hover:underline mx-1">IO Games</Link> and
+                        <Link href="/category/racing" className="text-primary hover:underline mx-1">Racing Games</Link> to
+                        <Link href="/category/clicker" className="text-primary hover:underline mx-1">Clicker Games</Link> and
+                        <Link href="/category/car" className="text-primary hover:underline mx-1">Car Games</Link>,
                         ensuring that every player can find their perfect game.
                       </p>
                     </div>

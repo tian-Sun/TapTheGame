@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -156,12 +157,12 @@ export default function AboutPage() {
               <p className="text-muted-foreground mb-6">
                 Start your HTML5 game journey and experience the joy of instant play!
               </p>
-              <a
+              <Link
                 href="/"
                 className="btn-primary inline-block"
               >
                 Start Game Now
-              </a>
+              </Link>
             </section>
           </div>
         </div>
