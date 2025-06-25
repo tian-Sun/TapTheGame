@@ -1,15 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Vercel 部署不需要 output: 'export'
   trailingSlash: true,
-  webpack: (config, { isServer }) => {
-    // 确保路径解析正确
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': require('path').resolve(__dirname, 'src'),
-    };
-    return config;
-  },
   images: {
     unoptimized: true,
     domains: [
