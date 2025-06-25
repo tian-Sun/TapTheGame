@@ -73,7 +73,7 @@ export default function CategoryPageClient({ category, categoryInfo, categoryGam
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 flex items-center justify-center">
             <span className="text-6xl mr-4">{categoryInfo.icon}</span>
-            {categoryInfo.name} games
+            {categoryInfo.name} Games
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Explore our curated selection of {categoryInfo.name} games, featuring {categoryGames.length} exciting titles. Start playing now and enjoy endless fun!
@@ -180,7 +180,7 @@ export default function CategoryPageClient({ category, categoryInfo, categoryGam
         <div className="container-custom">
           <div className="flex items-center justify-between mb-6">
             <h2 className="section-title">
-              {hasActiveFilters ? '🔍 Filter Results' : `🎮 All ${categoryInfo.name} games`}
+              {hasActiveFilters ? '🔍 Filter Results' : `🎮 All ${categoryInfo.name} Games`}
               <span className="text-lg text-muted-foreground ml-2">
                 (Found {filteredGames.length} games)
               </span>
@@ -235,7 +235,7 @@ export default function CategoryPageClient({ category, categoryInfo, categoryGam
       <section className="py-16 bg-card">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">About {categoryInfo.name} games</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">About {categoryInfo.name} Games</h2>
             <div className="text-muted-foreground mb-8">
               {getCategoryDescription(category)}
             </div>

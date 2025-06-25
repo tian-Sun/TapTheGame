@@ -114,7 +114,7 @@ export const gameCategories = [
 export const navigationItems = [
   { name: "Home", href: "/" },
   { name: "Most played", href: "/most-played" },
-  // { name: "New", href: "/new" },
+  { name: "Recommended", href: "/recommended" },
   { name: "Trending", href: "/trending" },
   // { name: "Specials", href: "/specials" },
   // { name: "Recently played", href: "/recently-played" }
