@@ -1,0 +1,30 @@
+{
+  "name": "TapTheGame Web - Free HTML5 Online Games",
+  "short_name": "TapTheGame Web",
+  "description": "Play 200+ HTML5 mini games instantly on TapTheGame Web — no downloads, no installs. Enjoy classics, trending hits and fresh new titles on any device, anywhere!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14131A",
+  "theme_color": "#5B58FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["games", "entertainment"],
+  "lang": "zh-CN",
+  "dir": "ltr"
+} 
