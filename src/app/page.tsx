@@ -282,7 +282,7 @@ export default function HomePage() {
               title="⭐ Recommended Games"
               games={recommendedGames}
               showViewMore={true}
-              viewMoreHref="/recommended"
+              viewMoreHref="/category/all"
               className="bg-muted/20"
             />
 
