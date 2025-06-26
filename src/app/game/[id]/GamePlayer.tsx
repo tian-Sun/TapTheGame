@@ -12,11 +12,38 @@ export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
     window.open(gameUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const handleFullscreen = () => {
-    const iframe = document.querySelector('iframe');
-    if (iframe?.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else {
+  const handleFullscreen = async () => {
+    const iframe = document.getElementById('game-iframe') as HTMLIFrameElement;
+    if (!iframe) {
+      console.log('Iframe not found, opening in new tab');
+      handleOpenInNewTab();
+      return;
+    }
+
+    try {
+      // Modern browsers
+      if (iframe.requestFullscreen) {
+        await iframe.requestFullscreen();
+      } 
+      // Safari
+      else if ((iframe as any).webkitRequestFullscreen) {
+        (iframe as any).webkitRequestFullscreen();
+      } 
+      // Firefox
+      else if ((iframe as any).mozRequestFullScreen) {
+        (iframe as any).mozRequestFullScreen();
+      } 
+      // IE/Edge
+      else if ((iframe as any).msRequestFullscreen) {
+        (iframe as any).msRequestFullscreen();
+      } 
+      // Fallback
+      else {
+        throw new Error('Fullscreen not supported');
+      }
+    } catch (error) {
+      console.log('Fullscreen failed:', error);
+      // 如果全屏失败，在新标签页打开游戏
       handleOpenInNewTab();
     }
   };
@@ -25,10 +52,12 @@ export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
     <div className="bg-card border border-border rounded-xl overflow-hidden cyber-glow">
       <div className="relative bg-black" style={{ aspectRatio: '16/9', minHeight: '500px', maxHeight: '70vh' }}>
         <iframe
+          id="game-iframe"
           src={gameUrl}
           className="w-full h-full border-0"
           sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
           allowFullScreen
+          allow="fullscreen"
           title={`Play ${game.title}`}
         />
 

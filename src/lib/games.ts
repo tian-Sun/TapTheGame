@@ -80,9 +80,41 @@ export const games: Game[] = [
     href: "/play/drift-boss",
     html5Url: "https://driftboss.net/"
   },
+  {
+    id: "peggys-post",
+    title: "Peggy's Post",
+    image: "/games/peggys-post.png",
+    tags: ["simulation", "management", "relaxing"],
+    category: "casual",
+    href: "/play/peggys-post",
+    html5Url: "https://html-classic.itch.zone/html/13958625/Peggy's Post/index.html",
+    featured: true
+  },
+  {
+    id: "work-life-balance",
+    title: "Work-Life Balance",
+    image: "/games/work-life-balance.png",
+    tags: ["multitasking", "casual", "time"],
+    category: "casual",
+    href: "/play/work-life-balance",
+    html5Url: "https://html-classic.itch.zone/html/13382148-1251765/index.html",
+    featured: true
+  },
 
   // Action Games
 
+
+  // Puzzle Games
+  {
+    id: "ooo-demo",
+    title: "Öoo Demo",
+    image: "/games/ooo-demo.png",
+    tags: ["puzzle", "platformer", "bomb"],
+    category: "puzzle",
+    href: "/play/ooo-demo",
+    html5Url: "https://html-classic.itch.zone/html/13956792/index.html",
+    featured: true
+  },
 
   // Sports Games
   {

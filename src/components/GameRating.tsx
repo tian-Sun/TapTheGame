@@ -32,7 +32,7 @@ export default function GameRating({ game }: GameRatingProps) {
         userName: 'GamePlayer2023',
         rating: 5,
         comment: 'Amazing game! Beautiful graphics, smooth controls, highly recommended!',
-        date: '2024-01-15',
+        date: '2025-06-26',
         likes: 12
       },
       {
@@ -40,7 +40,7 @@ export default function GameRating({ game }: GameRatingProps) {
         userName: 'GameMaster',
         rating: 4,
         comment: 'Great game with interesting gameplay, but a bit challenging.',
-        date: '2024-01-10',
+        date: '2025-06-26',
         likes: 8
       },
       {
@@ -48,7 +48,7 @@ export default function GameRating({ game }: GameRatingProps) {
         userName: 'CasualPlayer',
         rating: 4,
         comment: 'Perfect for casual gaming, very relaxing.',
-        date: '2024-01-08',
+        date: '2025-06-26',
         likes: 5
       }
     ];

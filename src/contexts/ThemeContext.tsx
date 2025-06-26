@@ -20,14 +20,21 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     
     // 确保在客户端环境中运行
     if (typeof window !== 'undefined') {
-    // 从localStorage读取主题设置
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // 检查系统偏好
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+      try {
+        // 从localStorage读取主题设置
+        const savedTheme = localStorage.getItem('theme') as Theme;
+        if (savedTheme && (savedTheme === 'dark' || savedTheme === 'light')) {
+          setTheme(savedTheme);
+        } else {
+          // 检查系统偏好
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const newTheme = prefersDark ? 'dark' : 'light';
+          setTheme(newTheme);
+          localStorage.setItem('theme', newTheme);
+        }
+      } catch (error) {
+        console.log('Theme initialization error:', error);
+        setTheme('dark'); // 降级到默认主题
       }
     }
   }, []);

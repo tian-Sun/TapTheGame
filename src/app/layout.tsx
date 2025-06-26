@@ -96,45 +96,16 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <head>
-        {/* Microsoft Clarity */}
+        {/* Theme initialization - moved to prevent hydration mismatch */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "s4xtiarepn");
-            `,
-          }}
-        />
-
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5851231098067394"
-          crossOrigin="anonymous"
-        />
-        
-        {/* Theme initialization */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const savedTheme = localStorage.getItem('theme');
-                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-                  
-                  document.documentElement.classList.remove('light', 'dark');
-                  document.documentElement.classList.add(theme);
-                  
-                  console.log('Initial theme set:', theme);
-                } catch (e) {
-                  document.documentElement.classList.add('dark');
-                  console.log('Fallback to dark theme');
-                }
-              })();
+              try {
+                const theme = 'dark'; // Default theme to prevent hydration mismatch
+                document.documentElement.classList.add(theme);
+              } catch (e) {
+                document.documentElement.classList.add('dark');
+              }
             `,
           }}
         />
@@ -153,6 +124,24 @@ export default function RootLayout({
             gtag('config', 'G-WC5YN5B020');
           `}
         </Script>
+
+        {/* Microsoft Clarity */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "s4xtiarepn");
+          `}
+        </Script>
+
+        {/* Google AdSense */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5851231098067394"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
 
         <ThemeProvider>
           {children}

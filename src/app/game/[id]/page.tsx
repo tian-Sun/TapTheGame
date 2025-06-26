@@ -31,20 +31,8 @@ export default async function GamePage({ params }: GamePageProps) {
     notFound();
   }
 
-  // 游戏URL映射
-  const gameUrls: Record<string, string> = {
-    'shell-shockers': 'https://shellshock.io/',
-    'smash-karts': 'https://smashkarts.io/',
-    'dogeminer': 'https://dogeminer.se/',
-    'drift-boss': 'https://driftboss.net/',
-    'hole-io': 'https://hole-io.com/',
-    'paper-io-2': 'https://paper-io.com/',
-    'krunker': 'https://krunker.io/',
-    '10x10': 'https://10x10.plus/',
-    'default': `https://www.gamepix.com${game.href}`
-  };
-
-  const gameUrl = gameUrls[game.id] || gameUrls.default;
+  // 优先使用游戏对象中的 html5Url，如果没有则使用默认的 GamePix URL
+  const gameUrl = game.html5Url || `https://www.gamepix.com${game.href}`;
 
   // 获取同类型游戏推荐
   const relatedGames = games
@@ -104,6 +92,92 @@ export default async function GamePage({ params }: GamePageProps) {
         'Use boost pads for speed',
         'Keep moving to avoid attacks',
         'Learn weapon timing'
+      ]
+    },
+    'ooo-demo': {
+      description: 'Öoo Demo is a charming bomb caterpillar puzzle platformer where you control a cute caterpillar that uses bombs to solve puzzles and navigate through levels. Think strategically about bomb placement and timing to create paths, destroy obstacles, and reach your goals. This demo offers 2-3 hours of brain-teasing gameplay that emphasizes puzzle-solving over action.',
+      howToPlay: [
+        'Control the caterpillar character through various levels',
+        'Place bombs strategically to create new paths',
+        'Use bomb explosions to push the caterpillar to new locations',
+        'Think carefully about timing and positioning',
+        'Solve environmental puzzles to progress',
+        'Discover hidden paths and secret areas'
+      ],
+      controls: [
+        'Arrow Keys or WASD - Move caterpillar',
+        'Space - Place bomb',
+        'Mouse - Navigate menus',
+        'R - Restart level',
+        'ESC - Pause menu'
+      ],
+      tips: [
+        'Plan your bomb placement before acting',
+        'Experiment with different bomb positions',
+        'Use explosions to reach higher platforms',
+        'Look for hidden passages and secrets',
+        'Take your time - this is a thinking game',
+        'Try multiple approaches to each puzzle'
+      ]
+    },
+    'peggys-post': {
+      description: "Peggy's Post is a cozy lighthouse post office simulation game where you take on the role of lightkeeper and postmaster. Sort mail, assign postage, and load parcels onto delivery vehicles in this relaxing management experience. Often described as a 'chill version of Papers Please', it offers the same rule-checking satisfaction without the time pressure stress.",
+      howToPlay: [
+        'Start with 7-Day mode to learn mechanics gradually',
+        'Sort incoming mail and packages by destination',
+        'Weigh parcels and assign correct postage stamps',
+        'Check shipping rules and regulations carefully',
+        'Load packages onto the appropriate delivery vehicles',
+        'Manage your lighthouse post office efficiently'
+      ],
+      controls: [
+        'Left Click - Hold and move items',
+        'Right Click or R - Rotate/use held item',
+        'Tab - Toggle shipping inventory/mistake preview',
+        'Left Shift - Preserve item layering',
+        'Left Ctrl - Push item to back layer',
+        'W/E - Flip through shipping blueprints',
+        'Q - Toggle storage (when unlocked)',
+        'D - Next customer',
+        'A - End day'
+      ],
+      tips: [
+        'Take your time - there are no strict time limits',
+        'Read the rulebook carefully for shipping guidelines',
+        'Use the mistake preview to check your work',
+        'Explore hidden features by clicking around',
+        'Try Endless mode after mastering 7-Day mode',
+        'Pay attention to package weights and destinations',
+        'Use storage efficiently to manage workflow'
+      ]
+    },
+    'work-life-balance': {
+      description: "Work-Life Balance is a fast-paced multitasking game where you juggle two jobs and daily life tasks simultaneously. In just 60 seconds per day, you must complete both work tasks (Accountant and Editor roles) and life tasks (Dancing Class and Lawn Mowing) across 4 demanding days. This lightweight casual game collection offers quick, easy-to-learn gameplay perfect for short breaks and relaxing challenges.",
+      howToPlay: [
+        'Complete 4 days of multitasking challenges',
+        'Each day lasts 60 seconds - manage your time wisely',
+        'Handle one work task and one life task simultaneously',
+        'Work as an Accountant: calculate total assets from given numbers',
+        'Work as an Editor: spot typos among four words',
+        'Attend Dancing Class: follow teacher\'s hand movements',
+        'Do Lawn Mowing: steer the mower to cut as much grass as possible',
+        'Maximize your score by balancing both task types'
+      ],
+      controls: [
+        'Mouse - Click to interact with all elements',
+        'Touch - Tap to interact (mobile friendly)',
+        'Left/Right Hand - Follow dance instructions',
+        'Steering - Control lawn mower direction',
+        'Multiple Choice - Select correct answers'
+      ],
+      tips: [
+        'Life tasks earn you base points',
+        'Work tasks provide score multipliers',
+        'Balance focus between both task types',
+        'Practice makes perfect - games are quick to restart',
+        'Aim for the developer\'s high score of 30,599',
+        'Don\'t panic - stay calm under the 60-second pressure',
+        'Each day gets progressively more challenging'
       ]
     }
   };
