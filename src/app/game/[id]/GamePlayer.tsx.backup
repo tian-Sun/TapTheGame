@@ -7,19 +7,6 @@ interface GamePlayerProps {
   gameUrl: string;
 }
 
-// 定义浏览器特定的全屏 API 接口
-interface WebkitHTMLElement extends HTMLElement {
-  webkitRequestFullscreen?: () => Promise<void> | void;
-}
-
-interface MozHTMLElement extends HTMLElement {
-  mozRequestFullScreen?: () => Promise<void> | void;
-}
-
-interface MSHTMLElement extends HTMLElement {
-  msRequestFullscreen?: () => Promise<void> | void;
-}
-
 export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
   const handleOpenInNewTab = () => {
     window.open(gameUrl, '_blank', 'noopener,noreferrer');
@@ -39,19 +26,16 @@ export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
         await iframe.requestFullscreen();
       } 
       // Safari
-      else if ((iframe as WebkitHTMLElement).webkitRequestFullscreen) {
-        const fn = (iframe as WebkitHTMLElement).webkitRequestFullscreen;
-        if (fn) await fn();
+      else if ((iframe as any).webkitRequestFullscreen) {
+        (iframe as any).webkitRequestFullscreen();
       } 
       // Firefox
-      else if ((iframe as MozHTMLElement).mozRequestFullScreen) {
-        const fn = (iframe as MozHTMLElement).mozRequestFullScreen;
-        if (fn) await fn();
+      else if ((iframe as any).mozRequestFullScreen) {
+        (iframe as any).mozRequestFullScreen();
       } 
       // IE/Edge
-      else if ((iframe as MSHTMLElement).msRequestFullscreen) {
-        const fn = (iframe as MSHTMLElement).msRequestFullscreen;
-        if (fn) await fn();
+      else if ((iframe as any).msRequestFullscreen) {
+        (iframe as any).msRequestFullscreen();
       } 
       // Fallback
       else {
@@ -150,4 +134,4 @@ export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
       </div>
     </div>
   );
-}
+} 
