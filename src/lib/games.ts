@@ -100,9 +100,38 @@ export const games: Game[] = [
     html5Url: "https://html-classic.itch.zone/html/13382148-1251765/index.html",
     featured: true
   },
+  {
+    id: "my-husband-is-a-stranger",
+    title: "My Husband is a Stranger",
+    image: "/games/my-husband-is-a-stranger.jpg",
+    tags: ["visual novel", "romance", "psychological", "thriller", "narrative", "mystery", "drama", "horror", "interactive fiction", "story-rich"],
+    category: "casual",
+    href: "/play/my-husband-is-a-stranger",
+    html5Url: "https://html-classic.itch.zone/html/14146223/index.html",
+    trending: true
+  },
+  {
+    id: "retromine",
+    title: "Retromine",
+    image: "/games/retromine.png",
+    tags: ["deck building", "roguelike", "mining", "incremental", "arcade", "strategy", "pixel art", "retro"],
+    category: "casual",
+    href: "/play/retromine",
+    html5Url: "https://html-classic.itch.zone/html/14176831/Web/index.html",
+    featured: true
+  },
 
   // Action Games
-
+  {
+    id: "bloodflame-origins",
+    title: "Bloodflame Origins: The Maven in Blue",
+    image: "/games/bloodflame-origins.png",
+    tags: ["hack and slash", "isometric", "fantasy", "fangame", "hololive", "dungeon crawler", "action", "adventure"],
+    category: "action",
+    href: "/play/bloodflame-origins",
+    html5Url: "https://html-classic.itch.zone/html/13847844/bloodmav_tb7web/index.html",
+    featured: true
+  },
 
   // Puzzle Games
   {
@@ -114,6 +143,16 @@ export const games: Game[] = [
     href: "/play/ooo-demo",
     html5Url: "https://html-classic.itch.zone/html/13956792/index.html",
     featured: true
+  },
+  {
+    id: "retromine-puzzle",
+    title: "Retromine",
+    image: "/games/retromine.png",
+    tags: ["deck building", "roguelike", "mining", "incremental", "strategy", "puzzle", "card game", "resource management"],
+    category: "puzzle",
+    href: "/play/retromine",
+    html5Url: "https://html-classic.itch.zone/html/14176831/Web/index.html",
+    popular: true
   },
 
   // Sports Games
