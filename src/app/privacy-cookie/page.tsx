@@ -68,7 +68,7 @@ export default function PrivacyCookiePage() {
                 TapTheGame Web is a platform focused on providing HTML5 game aggregation services. We aim to provide high-quality, no-download online game services to users.
               </p>
               <p className="text-muted-foreground">
-                📧 Email: <a href="mailto:wendy.1031ht@gmail.com" className="text-primary hover:underline">wendy.1031ht@gmail.com</a>
+                📧 Email: <a href="mailto:contact@tapthegame.com" className="text-primary hover:underline">contact@tapthegame.com</a>
               </p>
             </section>
 
@@ -146,7 +146,7 @@ export default function PrivacyCookiePage() {
               </p>
               <div className="space-y-2">
                 <p className="text-muted-foreground">
-                  📧 Email: <a href="mailto:wendy.1031ht@gmail.com" className="text-primary hover:underline">wendy.1031ht@gmail.com</a>
+                  📧 Email: <a href="mailto:contact@tapthegame.com" className="text-primary hover:underline">contact@tapthegame.com</a>
                 </p>
                 <p className="text-muted-foreground">
                   🌐 Website: <a href="https://tapthegame.com" className="text-primary hover:underline">tapthegame.com</a>

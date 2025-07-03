@@ -139,7 +139,7 @@ export default function AboutPage() {
                 </p>
                 <div className="space-y-2">
                   <p>
-                    📧 Email: <a href="mailto:wendy.1031ht@gmail.com" className="text-primary hover:underline">wendy.1031ht@gmail.com</a>
+                    📧 Email: <a href="mailto:contact@tapthegame.com" className="text-primary hover:underline">contact@tapthegame.com</a>
                   </p>
                   <p>
                     🌐 Website: <a href="https://tapthegame.com" className="text-primary hover:underline">tapthegame.com</a>

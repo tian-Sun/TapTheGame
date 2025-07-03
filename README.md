@@ -164,7 +164,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Contact
 
-- **Email**: wendy.1031ht@gmail.com
+- **Email**: contact@tapthegame.com
 - **Website**: [tapthegame.com](https://tapthegame.com)
 - **GitHub**: [tian-Sun/TapTheGame](https://github.com/tian-Sun/TapTheGame)
 

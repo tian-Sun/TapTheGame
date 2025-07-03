@@ -13,7 +13,7 @@ export default function Footer() {
 
   const footerLinks = [
     { name: 'About Us', href: '/about' },
-    { name: 'Contact Us', href: 'mailto:wendy.1031ht@gmail.com' },
+    { name: 'Contact Us', href: 'mailto:contact@tapthegame.com' },
     { name: 'Privacy Policy', href: '/privacy-cookie' },
     { name: 'Terms of Service', href: '/terms' }
     // { name: 'Cookie Policy', href: '/cookies' }
@@ -62,7 +62,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-foreground mb-4">Contact Us</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>📧 <a href="mailto:wendy.1031ht@gmail.com" className="hover:text-primary transition-colors duration-200">wendy.1031ht@gmail.com</a></p>
+              <p>📧 <a href="mailto:contact@tapthegame.com" className="hover:text-primary transition-colors duration-200">contact@tapthegame.com</a></p>
               <p>🌐 <a href="https://tapthegame.com" className="hover:text-primary transition-colors duration-200">tapthegame.com</a></p>
             </div>
             
@@ -122,7 +122,7 @@ export default function Footer() {
               <p className="mb-1">
                 TapTheGame Web<br />
                 HTML5 Mini Game Aggregation Platform<br />
-                Contact Email: wendy.1031ht@gmail.com
+                Contact Email: contact@tapthegame.com
               </p>
             </div>
 
@@ -140,7 +140,7 @@ export default function Footer() {
               TapTheGame Web is not only for players. We provide HTML5 game aggregation platforms for developers to reach global audiences.
             </p>
             <a
-              href="mailto:wendy.1031ht@gmail.com"
+              href="mailto:contact@tapthegame.com"
               className="btn-primary inline-block"
             >
               Contact Us to Bring Your HTML5 Games to Millions of Players Worldwide

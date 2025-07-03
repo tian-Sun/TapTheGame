@@ -8,4 +8,4 @@ google.com, ca-pub-5851231098067394, DIRECT, f08c47fec0942fa0
 # google.com, ca-pub-5851231098067394, DIRECT, f08c47fec0942fa0
 
 # Contact information (optional but recommended)
-# contact=wendy.1031ht@gmail.com 
+# contact=contact@tapthegame.com 
