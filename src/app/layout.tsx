@@ -14,17 +14,9 @@ export const metadata: Metadata = {
     "free online games", 
     "mini games",
     "browser games",
-    "casual games",
-    "mobile games",
-    "instant play games",
-    "no download games",
     "TapTheGame",
-    "web games",
-    "arcade games",
-    "puzzle games",
     "action games",
-    "racing games",
-    "sports games"
+    "puzzle games"
   ],
   authors: [{ name: "TapTheGame Web Team" }],
   creator: "TapTheGame Web",
@@ -40,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'zh_CN',
+    locale: 'en_US',
     url: 'https://tapthegame.com',
     title: 'TapTheGame Web — Free Online Games | Play Now!',
     description: 'Play 200+ HTML5 mini games instantly on TapTheGame Web — no downloads, no installs. Enjoy classics, trending hits and fresh new titles on any device, anywhere!',
@@ -94,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Theme initialization - moved to prevent hydration mismatch */}
         <script

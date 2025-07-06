@@ -155,7 +155,6 @@ export const games: Game[] = [
     popular: true
   },
 
-  // Sports Games
   {
     id: "krunker",
     title: "Krunker",
@@ -165,6 +164,62 @@ export const games: Game[] = [
     href: "/play/krunker",
     html5Url: "https://krunker.io/",
     featured: true
+  },
+
+  // New Games
+  {
+    id: "raven-star",
+    title: "Raven Star",
+    image: "/games/raven-star.png",
+    tags: ["platformer", "pixel art", "game boy", "adventure", "story"],
+    category: "action",
+    href: "/play/raven-star",
+    html5Url: "https://html-classic.itch.zone/html/13655458/web/index.html",
+    featured: true
+  },
+  {
+    id: "side-effects",
+    title: "Side Effects",
+    image: "/games/side-effects.png",
+    tags: ["strategy", "horror", "dark", "pills", "survival"],
+    category: "puzzle",
+    href: "/play/side-effects",
+    html5Url: "https://html-classic.itch.zone/html/14031193/SideEffectsWebBuild_V0.22/index.html",
+    popular: true
+  },
+  {
+    id: "we-suspect-foul-play",
+    title: "We Suspect Foul Play",
+    image: "/games/we-suspect-foul-play.png",
+    tags: ["detective", "point and click", "mystery", "noir", "hollywood"],
+    category: "puzzle",
+    href: "/play/we-suspect-foul-play",
+    html5Url: "https://html.itch.zone/html/13658578/index.html",
+    trending: true
+  },
+
+  // Raven Star in shooter category
+  {
+    id: "raven-star-shooter",
+    title: "Raven Star",
+    image: "/games/raven-star.png",
+    tags: ["platformer", "pixel art", "game boy", "adventure", "story"],
+    category: "shooter",
+    href: "/play/raven-star",
+    html5Url: "https://html-classic.itch.zone/html/13655458/web/index.html",
+    featured: true
+  },
+
+  // We Suspect Foul Play in casual category
+  {
+    id: "we-suspect-foul-play-casual",
+    title: "We Suspect Foul Play",
+    image: "/games/we-suspect-foul-play.png",
+    tags: ["detective", "point and click", "mystery", "noir", "hollywood"],
+    category: "casual",
+    href: "/play/we-suspect-foul-play",
+    html5Url: "https://html.itch.zone/html/13658578/index.html",
+    trending: true
   }
 ];
 
@@ -175,11 +230,9 @@ export const gameCategories = [
   { id: "casual", name: "Casual", icon: "🎲" },
   { id: "puzzle", name: "Puzzle", icon: "🧩" },
   { id: "racing", name: "Racing", icon: "🏎️" },
-  { id: "sports", name: "Sports", icon: "⚽" },
   { id: "shooter", name: "Shooter", icon: "🔫" },
   { id: "clicker", name: "Clicker", icon: "👆" },
-  { id: "car", name: "Car", icon: "🚗" },
-  { id: "fighting", name: "Fighting", icon: "🥊" }
+  { id: "car", name: "Car", icon: "🚗" }
 ];
 
 export const navigationItems = [

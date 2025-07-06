@@ -48,7 +48,7 @@ export default function AboutPage() {
                 <div className="space-y-3">
                   <h3 className="text-lg font-semibold text-foreground">🎮 200+ HTML5 Games</h3>
                   <p className="text-muted-foreground">
-                    We have selected various HTML5 games, including action, puzzle, racing, and sports, to meet different user needs.
+                    We have selected various HTML5 games, including action, puzzle, racing, and casual games, to meet different user needs.
                   </p>
                 </div>
                 

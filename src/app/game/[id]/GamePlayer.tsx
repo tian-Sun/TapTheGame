@@ -7,7 +7,7 @@ interface GamePlayerProps {
   gameUrl: string;
 }
 
-// 定义浏览器特定的全屏 API 接口
+// Define browser-specific fullscreen API interfaces
 interface WebkitHTMLElement extends HTMLElement {
   webkitRequestFullscreen?: () => Promise<void> | void;
 }
@@ -59,7 +59,7 @@ export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
       }
     } catch (error) {
       console.log('Fullscreen failed:', error);
-      // 如果全屏失败，在新标签页打开游戏
+      // If fullscreen fails, open game in new tab
       handleOpenInNewTab();
     }
   };
@@ -77,7 +77,7 @@ export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
           title={`Play ${game.title}`}
         />
 
-        {/* 游戏加载状态 -> Game loading status */}
+        {/* Game loading status */}
         <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm rounded-lg px-3 py-2">
           <div className="flex items-center space-x-2 text-white text-sm">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -85,7 +85,7 @@ export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
           </div>
         </div>
 
-        {/* 控制按钮 -> Control buttons */}
+        {/* Control buttons */}
         <div className="absolute top-4 right-4 flex space-x-2">
           <button
             onClick={handleOpenInNewTab}
@@ -107,7 +107,7 @@ export default function GamePlayer({ game, gameUrl }: GamePlayerProps) {
           </button>
         </div>
 
-        {/* 游戏信息覆盖层 -> Game info overlay */}
+        {/* Game info overlay */}
         <div className="absolute bottom-4 left-4 right-4">
           <div className="bg-black/70 backdrop-blur-sm rounded-lg p-4">
             <div className="flex items-center justify-between flex-wrap gap-4">

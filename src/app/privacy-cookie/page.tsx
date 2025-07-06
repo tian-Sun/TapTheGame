@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy and Cookie Policy',
-  description: 'TapTheGame Web 的隐私政策与 Cookie 使用说明，了解我们如何保护您的个人信息。',
+  description: 'TapTheGame Web privacy policy and cookie usage instructions. Learn how we protect your personal information.',
 };
 
 export default function PrivacyCookiePage() {
@@ -142,7 +142,7 @@ export default function PrivacyCookiePage() {
             <section className="bg-card border border-border rounded-lg p-6">
               <h2 className="text-2xl font-bold text-foreground mb-4">Contact Us</h2>
               <p className="text-muted-foreground mb-4">
-                如果您对我们的隐私政策有任何疑问，请通过以下方式联系我们：
+                If you have any questions about our privacy policy, please contact us via the following methods:
               </p>
               <div className="space-y-2">
                 <p className="text-muted-foreground">

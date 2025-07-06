@@ -11,7 +11,7 @@ interface AdSenseProps {
   className?: string;
 }
 
-// 声明全局 adsbygoogle 对象
+// Declare global adsbygoogle object
 declare global {
   interface Window {
     adsbygoogle: Array<Record<string, unknown>>;
@@ -27,16 +27,16 @@ export default function AdSense({
   className = '',
 }: AdSenseProps) {
   useEffect(() => {
-    // 只在有有效广告位ID时才初始化广告
+    // Only initialize ads when there's a valid ad slot ID
     if (!adSlot || adSlot.startsWith('1234567')) {
       console.warn('AdSense: Invalid or demo ad slot ID, skipping initialization');
       return;
     }
 
     try {
-      // 确保 adsbygoogle 存在且页面已加载
+      // Ensure adsbygoogle exists and page is loaded
       if (typeof window !== 'undefined' && window.adsbygoogle && document.readyState === 'complete') {
-        // 延迟执行以确保DOM完全加载
+        // Delay execution to ensure DOM is fully loaded
         setTimeout(() => {
           try {
             window.adsbygoogle.push({});
@@ -45,7 +45,7 @@ export default function AdSense({
           }
         }, 100);
       } else if (typeof window !== 'undefined') {
-        // 如果页面还没加载完成，等待加载完成后再初始化
+        // If page hasn't finished loading, wait for load completion before initializing
         const handleLoad = () => {
           if (window.adsbygoogle) {
             setTimeout(() => {
@@ -70,7 +70,7 @@ export default function AdSense({
     }
   }, [adSlot]);
 
-  // 如果是示例ID，显示占位符
+  // If it's a demo ID, show placeholder
   if (!adSlot || adSlot.startsWith('1234567')) {
     return (
       <div className={`adsense-container ${className}`}>
@@ -99,46 +99,46 @@ export default function AdSense({
   );
 }
 
-// 预定义的广告配置
+// Predefined ad configurations
 export const AdConfigs = {
-  // 横幅广告 (728x90)
+  // Banner ad (728x90)
   banner: {
-    adSlot: "", // 请在 Google AdSense 后台创建广告位并填入真实ID
+    adSlot: "", // Please create ad unit in Google AdSense dashboard and fill in real ID
     adFormat: "horizontal" as const,
     style: { display: 'block', width: '728px', height: '90px' }
   },
   
-  // 矩形广告 (300x250)
+  // Rectangle ad (300x250)
   rectangle: {
-    adSlot: "", // 请在 Google AdSense 后台创建广告位并填入真实ID
+    adSlot: "", // Please create ad unit in Google AdSense dashboard and fill in real ID
     adFormat: "rectangle" as const,
     style: { display: 'block', width: '300px', height: '250px' }
   },
   
-  // 大矩形广告 (336x280)
+  // Large rectangle ad (336x280)
   largeRectangle: {
-    adSlot: "", // 请在 Google AdSense 后台创建广告位并填入真实ID
+    adSlot: "", // Please create ad unit in Google AdSense dashboard and fill in real ID
     adFormat: "rectangle" as const,
     style: { display: 'block', width: '336px', height: '280px' }
   },
   
-  // 摩天大楼广告 (160x600)
+  // Skyscraper ad (160x600)
   skyscraper: {
-    adSlot: "", // 请在 Google AdSense 后台创建广告位并填入真实ID
+    adSlot: "", // Please create ad unit in Google AdSense dashboard and fill in real ID
     adFormat: "vertical" as const,
     style: { display: 'block', width: '160px', height: '600px' }
   },
   
-  // 移动端横幅 (320x50)
+  // Mobile banner (320x50)
   mobileBanner: {
-    adSlot: "", // 请在 Google AdSense 后台创建广告位并填入真实ID
+    adSlot: "", // Please create ad unit in Google AdSense dashboard and fill in real ID
     adFormat: "horizontal" as const,
     style: { display: 'block', width: '320px', height: '50px' }
   },
   
-  // 响应式广告
+  // Responsive ad
   responsive: {
-    adSlot: "", // 请在 Google AdSense 后台创建广告位并填入真实ID
+    adSlot: "", // Please create ad unit in Google AdSense dashboard and fill in real ID
     adFormat: "auto" as const,
     style: { display: 'block' }
   }

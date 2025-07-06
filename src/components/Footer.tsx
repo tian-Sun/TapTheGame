@@ -92,7 +92,7 @@ export default function Footer() {
           <h3 className="font-bold text-foreground mb-4">Popular Game Categories</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {gameCategories
-              .filter(category => category.id !== 'all') // 排除"All Games"
+              .filter(category => category.id !== 'all') // Exclude "All Games"
               .map((category) => (
               <Link
                   key={category.id}

@@ -60,7 +60,6 @@ export default function HomePage() {
   const actionGames = filteredGames.filter(game => game.category === 'action').slice(0, 8);
   const carGames = filteredGames.filter(game => game.category === 'car' || game.tags.includes('car')).slice(0, 8);
   const puzzleGames = filteredGames.filter(game => game.category === 'puzzle').slice(0, 8);
-  const sportsGames = filteredGames.filter(game => game.category === 'sports').slice(0, 8);
   const kidsGames = filteredGames.filter(game => game.category === 'kids').slice(0, 8);
 
   // Event handlers
@@ -367,15 +366,6 @@ export default function HomePage() {
               showViewMore={true}
               viewMoreHref="/category/puzzle"
               className="bg-muted/20"
-            />
-
-            {/* Sports Games */}
-            <GameSection
-              title="⚽ Sports Games"
-              games={sportsGames}
-              showViewMore={true}
-              viewMoreHref="/category/sports"
-              className="bg-background"
             />
 
             {/* Ad Responsive Bottom */}

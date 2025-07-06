@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import GameSection from '@/components/GameSection';
 import GameRating from '@/components/GameRating';
-// import SocialShare from '@/components/SocialShare'; // 暂时隐藏分享功能
+// import SocialShare from '@/components/SocialShare'; // Temporarily hide share functionality
 import Footer from '@/components/Footer';
 import { games, type Game } from '@/lib/games';
 import GamePlayer from './GamePlayer';
@@ -31,10 +31,10 @@ export default async function GamePage({ params }: GamePageProps) {
     notFound();
   }
 
-  // 优先使用游戏对象中的 html5Url，如果没有则使用默认的 GamePix URL
+  // Use html5Url from game object first, fallback to default GamePix URL
   const gameUrl = game.html5Url || `https://www.gamepix.com${game.href}`;
 
-  // 获取同类型游戏推荐
+  // Get related games recommendation
   const relatedGames = games
     .filter(g => g.id !== game.id && (
       g.category === game.category ||
@@ -42,7 +42,7 @@ export default async function GamePage({ params }: GamePageProps) {
     ))
     .slice(0, 8);
 
-  // 游戏描述数据
+  // Game description data
   const gameDescriptions: Record<string, {
     description: string;
     howToPlay: string[];
@@ -243,7 +243,7 @@ export default async function GamePage({ params }: GamePageProps) {
 
             <div className="flex items-center space-x-2">
               {/* <SocialShare game={game} /> */}
-              {/* 分享功能暂时隐藏，待完全开发后再启用 */}
+              {/* Share functionality temporarily hidden, will be enabled after full development */}
             </div>
           </div>
         </div>

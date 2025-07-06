@@ -5,40 +5,40 @@
 
 @layer base {
   :root {
-    /* 暗色主题（默认） */
-    --background: 249 16% 9%; /* #14131A 石墨深紫 */
+    /* Dark theme (default) */
+    --background: 249 16% 9%; /* #14131A Graphite deep purple */
     --foreground: 255 255 255;
-    --primary: 242 100% 67%; /* #5B58FF 电蓝紫 */
+    --primary: 242 100% 67%; /* #5B58FF Electric blue purple */
     --primary-foreground: 255 255 255;
-    --secondary: 35 100% 55%; /* #FF9F1C 橘黄 */
+    --secondary: 35 100% 55%; /* #FF9F1C Orange yellow */
     --secondary-foreground: 20 19 26;
-    --accent: 290 100% 70%; /* 亮紫色作为强调色 */
+    --accent: 290 100% 70%; /* Bright purple as accent color */
     --accent-foreground: 255 255 255;
-    --muted: 252 15% 20%; /* 比背景稍亮的紫色 */
+    --muted: 252 15% 20%; /* Slightly lighter purple than background */
     --muted-foreground: 200 200 200;
-    --card: 252 15% 13%; /* #1E1C26 卡片底 */
+    --card: 252 15% 13%; /* #1E1C26 Card background */
     --card-foreground: 255 255 255;
-    --border: 252 15% 25%; /* 比卡片稍亮的边框 */
+    --border: 252 15% 25%; /* Slightly lighter border than card */
     --input: 252 15% 18%;
-    --ring: 242 100% 67%; /* 与主色相同 */
+    --ring: 242 100% 67%; /* Same as primary color */
     --radius: 0.5rem;
   }
 
   .light {
-    /* 亮色主题 */
-    --background: 0 0% 100%; /* 白色背景 */
-    --foreground: 222 84% 4.9%; /* 深色文字 */
-    --primary: 242 100% 67%; /* #5B58FF 保持主色 */
+    /* Light theme */
+    --background: 0 0% 100%; /* White background */
+    --foreground: 222 84% 4.9%; /* Dark text */
+    --primary: 242 100% 67%; /* #5B58FF Keep primary color */
     --primary-foreground: 255 255 255;
-    --secondary: 35 100% 55%; /* #FF9F1C 保持辅助色 */
+    --secondary: 35 100% 55%; /* #FF9F1C Keep secondary color */
     --secondary-foreground: 255 255 255;
-    --accent: 290 100% 70%; /* 保持强调色 */
+    --accent: 290 100% 70%; /* Keep accent color */
     --accent-foreground: 255 255 255;
-    --muted: 210 40% 96%; /* 浅灰色 */
+    --muted: 210 40% 96%; /* Light gray */
     --muted-foreground: 215 13% 65%;
-    --card: 0 0% 100%; /* 白色卡片 */
+    --card: 0 0% 100%; /* White card */
     --card-foreground: 222 84% 4.9%;
-    --border: 214 32% 91%; /* 浅边框 */
+    --border: 214 32% 91%; /* Light border */
     --input: 214 32% 91%;
     --ring: 242 100% 67%;
   }
@@ -65,7 +65,7 @@
     box-shadow:
       0 4px 6px -1px rgba(0, 0, 0, 0.3),
       0 2px 4px -2px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(91, 88, 255, 0.08); /* 8% 亮紫投影 */
+      0 0 0 1px rgba(91, 88, 255, 0.08); /* 8% bright purple shadow */
   }
 
   .game-card:hover {
@@ -75,7 +75,7 @@
       0 10px 15px -3px rgba(0, 0, 0, 0.4),
       0 4px 6px -4px rgba(0, 0, 0, 0.4),
       0 0 0 1px rgba(91, 88, 255, 0.2),
-      0 0 20px rgba(91, 88, 255, 0.15); /* 增强的亮紫光晕 */
+      0 0 20px rgba(91, 88, 255, 0.15); /* Enhanced bright purple glow */
   }
 
   .game-card-image {
@@ -188,7 +188,7 @@
     box-shadow: inset 0 1px 0 rgba(91, 88, 255, 0.1);
   }
 
-  /* 赛博朋克风格的发光效果 */
+  /* Cyberpunk style glow effect */
   .cyber-glow {
     box-shadow:
       0 0 5px rgba(91, 88, 255, 0.3),
@@ -322,17 +322,17 @@
   }
 }
 
-/* AdSense 广告样式 */
+/* AdSense advertisement styles */
 .adsense-container {
   @apply w-full flex justify-center items-center;
-  min-height: 50px; /* 确保有最小高度 */
+  min-height: 50px; /* Ensure minimum height */
 }
 
 .adsense-container .adsbygoogle {
   @apply mx-auto;
 }
 
-/* 响应式广告调整 */
+/* Responsive advertisement adjustments */
 @media (max-width: 768px) {
   .adsense-container .adsbygoogle[data-ad-format="horizontal"] {
     width: 320px !important;
@@ -345,7 +345,7 @@
   }
 }
 
-/* 广告加载中的占位样式 */
+/* Advertisement loading placeholder styles */
 .adsense-container .adsbygoogle:empty {
   @apply bg-muted/30 border border-border rounded-md;
   position: relative;

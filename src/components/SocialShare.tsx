@@ -87,7 +87,7 @@ export default function SocialShare({ game, className = '' }: SocialShareProps) 
         setCopySuccess(true);
         setTimeout(() => setCopySuccess(false), 2000);
       } else {
-        // 降级处理
+        // Fallback handling
         const textArea = document.createElement('textarea');
         textArea.value = currentUrl;
         document.body.appendChild(textArea);
@@ -99,7 +99,7 @@ export default function SocialShare({ game, className = '' }: SocialShareProps) 
       }
     } catch (err) {
       console.error('Copy failed:', err);
-      // 降级处理
+      // Fallback handling
       const textArea = document.createElement('textarea');
       textArea.value = currentUrl;
       document.body.appendChild(textArea);
@@ -207,11 +207,11 @@ export default function SocialShare({ game, className = '' }: SocialShareProps) 
                 </p>
             </div>
 
-            {/* 二维码分享 */}
+            {/* QR Code sharing */}
             <div className="mt-6 text-center">
               <div className="bg-muted/20 border border-border rounded-lg p-4">
                 <div className="w-32 h-32 bg-white mx-auto mb-3 rounded-lg flex items-center justify-center">
-                  {/* 这里可以集成真实的二维码生成库，暂时用占位符 */}
+                  {/* Real QR code generation library can be integrated here, using placeholder for now */}
                   <div className="grid grid-cols-8 gap-1">
                     {Array.from({ length: 64 }).map((_, i) => {
                       const isBlack = Math.random() > 0.5;
@@ -225,7 +225,7 @@ export default function SocialShare({ game, className = '' }: SocialShareProps) 
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  用手机扫描二维码分享
+                  Scan QR code to share
                 </p>
               </div>
             </div>
