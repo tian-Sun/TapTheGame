@@ -6,7 +6,7 @@ export function getCategoryDescription(category: string): string {
     'puzzle': 'Puzzle games exercise your logical thinking and problem-solving abilities. Whether it\'s classic digital games or innovative puzzle challenges, they can help you improve your intelligence while having fun.',
     'racing': 'Racing games let you experience the perfect combination of speed and passion. From karting to super sports cars, from street racing to professional tracks, they satisfy all your fantasies about speed.',
     'casual': 'Casual games are characterized by easy and pleasant game experiences, suitable for players of all ages. Simple operations and fun gameplay allow you to enjoy games anytime and anywhere.',
-    'kids': 'Children\'s games are designed for young players, with educational significance and fun. Safe game environments and age-appropriate content allow children to learn and grow in games.'
+    'clicker': 'Clicker games offer addictive incremental gameplay where you build progress through clicking and automation. Start simple and gradually unlock powerful upgrades and achievements.'
   };
   return descriptions[category] || 'Explore this exciting game category and discover your game fun!';
 }
@@ -18,7 +18,7 @@ export function getCategoryFeatures(category: string): string[] {
     'puzzle': ['Develop Logical Thinking', 'Progressive Difficulty Design', 'Innovative Puzzle Mechanism', 'Achievement System'],
     'racing': ['Realistic Physics Engine', 'Diverse Tracks', 'Vehicle Modification System', 'Multiplayer Racing Mode'],
     'casual': ['Easy to Learn', 'Short Game Experience', 'Cute Graphic Style', 'Relaxing Mood'],
-    'kids': ['Educational Significance', 'Safe Content', 'Interactive Learning', 'Creative Ability']
+    'clicker': ['Progressive Upgrades', 'Idle Automation', 'Achievement System', 'Number Growth Satisfaction']
   };
   return features[category] || ['Exciting Game Experience', 'High Quality Content', 'Smooth Operation', 'Fun Play'];
 }
@@ -30,7 +30,7 @@ export function getCategoryReasons(category: string): string[] {
     'puzzle': ['Develop Intelligence', 'Improve Focus', 'Develop Patience', 'Achievement Feeling'],
     'racing': ['Experience Speed Passion', 'Learn Driving Skills', 'Enjoy Competition Fun', 'Relax Mind'],
     'casual': ['Entertainment Anytime', 'Relieve Work Pressure', 'Simple to Understand', 'Old and Young'],
-    'kids': ['Educational Fun', 'Creative Ability', 'Develop Learning Interest', 'Safe and Healthy']
+    'clicker': ['Relaxing Gameplay', 'Sense of Progress', 'Perfect for Multitasking', 'Satisfying Number Growth']
   };
   return reasons[category] || ['Provide High-quality Entertainment', 'Suitable for All Players', 'Continuous Content Update', 'Community Interaction'];
 } 
