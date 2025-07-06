@@ -19,7 +19,7 @@ export default function GameFilter({
   availableTags,
   className = ""
 }: GameFilterProps) {
-  const popularTags = ['io', 'action', 'puzzle', 'racing', 'casual', 'kids', 'shooter', 'adventure'];
+  const popularTags = ['io', 'action', 'puzzle', 'racing', 'casual', 'kids', 'adventure'];
 
   return (
     <div className={`space-y-6 ${className}`}>

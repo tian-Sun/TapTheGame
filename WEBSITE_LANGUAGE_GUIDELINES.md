@@ -79,6 +79,8 @@ The following game categories have been **permanently removed** and should **NEV
 ### ❌ **Deleted Categories:**
 1. **Fighting** (`fighting`)
 2. **Sports** (`sports`)
+3. **Car** (`car`)
+4. **Shooter** (`shooter`)
 
 ### ⚠️ **Do NOT include these in:**
 - Game category lists
@@ -102,9 +104,7 @@ Only use these approved game categories:
 4. **Casual** (`casual`)
 5. **Puzzle** (`puzzle`)
 6. **Racing** (`racing`)
-7. **Shooter** (`shooter`)
-8. **Clicker** (`clicker`)
-9. **Car** (`car`)
+7. **Clicker** (`clicker`)
 
 ---
 

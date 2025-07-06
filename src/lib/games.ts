@@ -38,8 +38,8 @@ export const games: Game[] = [
     id: "smash-karts",
     title: "Smash Karts",
     image: "https://ext.same-assets.com/54244373/2183238829.jpeg",
-    tags: ["io", "car", "fun"],
-    category: "car",
+    tags: ["io", "fun"],
+    category: "io",
     href: "/play/smash-karts",
     html5Url: "https://smashkarts.io/",
     popular: true,
@@ -81,11 +81,51 @@ export const games: Game[] = [
     html5Url: "https://driftboss.net/"
   },
   {
+    id: "polytrack",
+    title: "PolyTrack",
+    image: "/games/polytrack.png",
+    tags: ["3d", "low-poly", "arcade", "difficult", "driving", "high score", "level editor", "speedrun"],
+    category: "racing",
+    href: "/play/polytrack",
+    html5Url: "https://html-classic.itch.zone/html/13305767/index.html",
+    featured: true
+  },
+  {
+    id: "tanuki-sunset",
+    title: "Tanuki Sunset",
+    image: "/games/tanuki-sunset.png",
+    tags: ["arcade", "casual", "high score", "infinite runner", "relaxing", "score attack", "skateboard", "synthwave"],
+    category: "racing",
+    href: "/play/tanuki-sunset",
+    html5Url: "https://html-classic.itch.zone/html/1756009/WebGL/index.html?v=1574334742",
+    popular: true
+  },
+  {
+    id: "help-no-brake",
+    title: "Help! No Brake",
+    image: "/games/help-no-brake.png",
+    tags: ["2d", "arcade", "pixel art", "top-down", "challenge", "platformer", "action"],
+    category: "racing",
+    href: "/play/help-no-brake",
+    html5Url: "https://html-classic.itch.zone/html/6749357/index.html?v=1732313683",
+    trending: true
+  },
+  {
+    id: "tiny-truck-racing",
+    title: "Tiny Truck Racing",
+    image: "/games/tiny-truck-racing.png",
+    tags: ["truck", "racing", "mini", "casual", "arcade", "driving", "competition"],
+    category: "racing",
+    href: "/play/tiny-truck-racing",
+    html5Url: "https://html-classic.itch.zone/html/11335131/index.html?v=1732313550",
+    featured: true
+  },
+  {
     id: "peggys-post",
     title: "Peggy's Post",
     image: "/games/peggys-post.png",
-    tags: ["simulation", "management", "relaxing"],
-    category: "casual",
+    tags: ["clicker", "simulation", "management", "relaxing", "post office", "cute", "pixel art"],
+    category: "clicker",
     href: "/play/peggys-post",
     html5Url: "https://html-classic.itch.zone/html/13958625/Peggy's Post/index.html",
     featured: true
@@ -120,6 +160,16 @@ export const games: Game[] = [
     html5Url: "https://html-classic.itch.zone/html/14176831/Web/index.html",
     featured: true
   },
+  {
+    id: "the-freak-circus",
+    title: "The Freak Circus",
+    image: "/games/the-freak-circus.png",
+    tags: ["visual novel", "horror", "circus", "yandere", "dark", "dating sim", "mystery", "psychological"],
+    category: "casual",
+    href: "/play/the-freak-circus",
+    html5Url: "https://html-classic.itch.zone/html/14081436/index.html",
+    featured: true
+  },
 
   // Action Games
   {
@@ -130,6 +180,36 @@ export const games: Game[] = [
     category: "action",
     href: "/play/bloodflame-origins",
     html5Url: "https://html-classic.itch.zone/html/13847844/bloodmav_tb7web/index.html",
+    featured: true
+  },
+  {
+    id: "swordfight",
+    title: "Swordfight!!",
+    image: "/games/swordfight.png",
+    tags: ["top-down", "swords", "pixel art", "boss battle", "singleplayer", "mobile", "16-bit"],
+    category: "action",
+    href: "/play/swordfight",
+    html5Url: "https://html-classic.itch.zone/html/14206763/index.html",
+    featured: true
+  },
+  {
+    id: "red-handed",
+    title: "Red Handed",
+    image: "/games/red-handed.png",
+    tags: ["stealth", "fps", "puzzle", "pixel art", "unique", "1-bit", "3d", "strategy"],
+    category: "action",
+    href: "/play/red-handed",
+    html5Url: "https://html-classic.itch.zone/html/3872485/Red%20Handed%20v1.1%20(WEBGL)/index.html?v=1732313766",
+    popular: true
+  },
+  {
+    id: "the-orchids-edge",
+    title: "The Orchid's Edge",
+    image: "/games/the-orchids-edge.png",
+    tags: ["3d platformer", "female protagonist", "combat", "fantasy", "scythe", "forest", "3d", "adventure"],
+    category: "action",
+    href: "/play/the-orchids-edge",
+    html5Url: "https://html-classic.itch.zone/html/7135666/index.html",
     featured: true
   },
 
@@ -154,6 +234,26 @@ export const games: Game[] = [
     html5Url: "https://html-classic.itch.zone/html/14176831/Web/index.html",
     popular: true
   },
+  {
+    id: "six-cats-under",
+    title: "Six Cats Under",
+    image: "/games/six-cats-under.png",
+    tags: ["point and click", "puzzle", "cats", "emotional", "pixel art", "cute", "story-rich", "adventure"],
+    category: "puzzle",
+    href: "/play/six-cats-under",
+    html5Url: "https://html-classic.itch.zone/html/2267583/index.html?v=1591301667",
+    featured: true
+  },
+  {
+    id: "last-seen-online",
+    title: "Last Seen Online",
+    image: "/games/last-seen-online.png",
+    tags: ["psychological horror", "escape room", "computer", "mystery", "nostalgia", "2000s", "detective", "thriller"],
+    category: "puzzle",
+    href: "/play/last-seen-online",
+    html5Url: "https://html-classic.itch.zone/html/13126325/index.html",
+    trending: true
+  },
 
   {
     id: "krunker",
@@ -167,16 +267,6 @@ export const games: Game[] = [
   },
 
   // New Games
-  {
-    id: "raven-star",
-    title: "Raven Star",
-    image: "/games/raven-star.png",
-    tags: ["platformer", "pixel art", "game boy", "adventure", "story"],
-    category: "action",
-    href: "/play/raven-star",
-    html5Url: "https://html-classic.itch.zone/html/13655458/web/index.html",
-    featured: true
-  },
   {
     id: "side-effects",
     title: "Side Effects",
@@ -198,27 +288,56 @@ export const games: Game[] = [
     trending: true
   },
 
-  // Raven Star in shooter category
   {
-    id: "raven-star-shooter",
+    id: "raven-star",
     title: "Raven Star",
     image: "/games/raven-star.png",
     tags: ["platformer", "pixel art", "game boy", "adventure", "story"],
-    category: "shooter",
+    category: "action",
     href: "/play/raven-star",
     html5Url: "https://html-classic.itch.zone/html/13655458/web/index.html",
     featured: true
   },
 
-  // We Suspect Foul Play in casual category
+  // Clicker Games
   {
-    id: "we-suspect-foul-play-casual",
-    title: "We Suspect Foul Play",
-    image: "/games/we-suspect-foul-play.png",
-    tags: ["detective", "point and click", "mystery", "noir", "hollywood"],
-    category: "casual",
-    href: "/play/we-suspect-foul-play",
-    html5Url: "https://html.itch.zone/html/13658578/index.html",
+    id: "what-body",
+    title: "What Body?",
+    image: "/games/what body.png",
+    tags: ["clicker", "visual novel", "short", "multiple endings", "comedy", "dark humor", "pixel art", "cute"],
+    category: "clicker",
+    href: "/play/what-body",
+    html5Url: "https://html-classic.itch.zone/html/9223086/www/index.html?v=1732313608",
+    trending: true
+  },
+  {
+    id: "plant-therapy",
+    title: "Plant Therapy",
+    image: "/games/plant.png",
+    tags: ["clicker", "idle", "cozy", "gardening", "relaxing", "casual", "simulation", "wholesome"],
+    category: "clicker",
+    href: "/play/plant-therapy",
+    html5Url: "https://html-classic.itch.zone/html/4618717-1272469/webgl/index.html",
+    popular: true
+  },
+  {
+    id: "astro-prospector",
+    title: "Astro Prospector",
+    image: "/games/astro.png",
+    tags: ["clicker", "incremental", "bullet hell", "space", "mining", "skill tree", "upgrades", "pixel art"],
+    category: "clicker",
+    href: "/play/astro-prospector",
+    html5Url: "https://html-classic.itch.zone/html/13954383/index.html",
+    featured: true
+  },
+  {
+    id: "lose95",
+    title: "Lose95",
+    image: "/games/lose95.png",
+    tags: ["clicker", "retro", "nostalgia", "pixel art", "endless", "roguelike", "computer", "90s"],
+    category: "clicker",
+    href: "/play/lose95",
+    html5Url: "https://html-classic.itch.zone/html/5652546/index.html?v=1732313716",
     trending: true
   }
 ];
@@ -230,9 +349,7 @@ export const gameCategories = [
   { id: "casual", name: "Casual", icon: "🎲" },
   { id: "puzzle", name: "Puzzle", icon: "🧩" },
   { id: "racing", name: "Racing", icon: "🏎️" },
-  { id: "shooter", name: "Shooter", icon: "🔫" },
-  { id: "clicker", name: "Clicker", icon: "👆" },
-  { id: "car", name: "Car", icon: "🚗" }
+  { id: "clicker", name: "Clicker", icon: "👆" }
 ];
 
 export const navigationItems = [

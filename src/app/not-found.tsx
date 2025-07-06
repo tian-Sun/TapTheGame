@@ -116,11 +116,11 @@ export default function NotFoundPage() {
                 <span className="text-sm font-medium">Casual Games</span>
               </Link>
               <Link
-                href="/category/car"
+                href="/category/clicker"
                 className="flex items-center space-x-2 p-3 rounded-lg bg-background border border-border hover:border-primary/50 transition-colors"
               >
-                <span className="text-xl">🚗</span>
-                <span className="text-sm font-medium">Car Games</span>
+                <span className="text-xl">👆</span>
+                <span className="text-sm font-medium">Clicker Games</span>
               </Link>
             </div>
           </div>

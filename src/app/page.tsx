@@ -51,14 +51,53 @@ export default function HomePage() {
     return filtered;
   }, [searchQuery, selectedCategory, selectedTags]);
 
-  // Section games with filters applied
-  const mostPlayedGames = filteredGames.filter(game => game.popular).slice(0, 8);
-  const recommendedGames = filteredGames.filter(game => game.featured).slice(0, 8);
-  const trendingGames = filteredGames.filter(game => game.trending).slice(0, 8);
+  // Helper function to remove duplicate games by ID
+  const uniqueGamesByTitle = (games: Game[]) => {
+    const gameMap = new Map<string, Game>();
+    games.forEach(game => {
+      if (!gameMap.has(game.title)) {
+        gameMap.set(game.title, game);
+      }
+    });
+    return Array.from(gameMap.values());
+  };
+
+  // Get unique games for each section, ensuring no game appears in multiple main sections
+  const getMainSectionGames = () => {
+    const usedGameTitles = new Set<string>();
+    
+    // Priority order: Most Played > Recommended > Trending
+    const mostPlayed = uniqueGamesByTitle(filteredGames.filter(game => game.popular))
+      .filter(game => {
+        if (usedGameTitles.has(game.title)) return false;
+        usedGameTitles.add(game.title);
+        return true;
+      })
+      .slice(0, 8);
+
+    const recommended = uniqueGamesByTitle(filteredGames.filter(game => game.featured))
+      .filter(game => {
+        if (usedGameTitles.has(game.title)) return false;
+        usedGameTitles.add(game.title);
+        return true;
+      })
+      .slice(0, 8);
+
+    const trending = uniqueGamesByTitle(filteredGames.filter(game => game.trending))
+      .filter(game => {
+        if (usedGameTitles.has(game.title)) return false;
+        usedGameTitles.add(game.title);
+        return true;
+      })
+      .slice(0, 8);
+
+    return { mostPlayed, recommended, trending };
+  };
+
+  const { mostPlayed: mostPlayedGames, recommended: recommendedGames, trending: trendingGames } = getMainSectionGames();
   const ioGames = filteredGames.filter(game => game.category === 'io').slice(0, 8);
   const casualGames = filteredGames.filter(game => game.category === 'casual').slice(0, 8);
   const actionGames = filteredGames.filter(game => game.category === 'action').slice(0, 8);
-  const carGames = filteredGames.filter(game => game.category === 'car' || game.tags.includes('car')).slice(0, 8);
   const puzzleGames = filteredGames.filter(game => game.category === 'puzzle').slice(0, 8);
   const kidsGames = filteredGames.filter(game => game.category === 'kids').slice(0, 8);
 
@@ -350,15 +389,6 @@ export default function HomePage() {
               className="bg-muted/20"
             />
 
-            {/* Car Games */}
-            <GameSection
-              title="🚗 Car Games"
-              games={carGames}
-              showViewMore={true}
-              viewMoreHref="/category/car"
-              className="bg-background"
-            />
-
             {/* Puzzle Games */}
             <GameSection
               title="🧩 Puzzle Games"
@@ -405,7 +435,7 @@ export default function HomePage() {
                         <Link href="/category/io" className="text-primary hover:underline mx-1">IO Games</Link> and
                         <Link href="/category/racing" className="text-primary hover:underline mx-1">Racing Games</Link> to
                         <Link href="/category/clicker" className="text-primary hover:underline mx-1">Clicker Games</Link> and
-                        <Link href="/category/car" className="text-primary hover:underline mx-1">Car Games</Link>,
+                        <Link href="/category/puzzle" className="text-primary hover:underline mx-1">Puzzle Games</Link>,
                         ensuring that every player can find their perfect game.
                       </p>
                     </div>
