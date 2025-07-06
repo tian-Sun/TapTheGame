@@ -93,8 +93,15 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const theme = 'dark'; // Default theme to prevent hydration mismatch
-                document.documentElement.classList.add(theme);
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme && (savedTheme === 'dark' || savedTheme === 'light')) {
+                  document.documentElement.classList.add(savedTheme);
+                } else {
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  const theme = prefersDark ? 'dark' : 'light';
+                  document.documentElement.classList.add(theme);
+                  localStorage.setItem('theme', theme);
+                }
               } catch (e) {
                 document.documentElement.classList.add('dark');
               }

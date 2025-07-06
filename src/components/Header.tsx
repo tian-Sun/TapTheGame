@@ -20,12 +20,18 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/">
+            <Link href="/" className="flex items-center space-x-2">
               <img
                 src="/icon.png"
                 alt="TapTheGame Web Logo"
                 className="h-8 w-auto cyber-glow transition-all duration-300 hover:scale-105"
               />
+              <span className="font-bold text-lg text-foreground tracking-wide md:hidden">
+                TapTheGame
+              </span>
+              <span className="hidden md:block font-semibold text-base text-foreground tracking-wide">
+                TapTheGame Web
+              </span>
             </Link>
           </div>
 
@@ -42,7 +48,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Language Selector & Theme Toggle & Mobile Menu */}
+          {/* Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-4">
             {/* Theme Toggle */}
             <button
@@ -116,7 +122,7 @@ export default function Header() {
         }}
       >
         <div className="container-custom">
-          <div className="flex items-center space-x-1 py-3 overflow-x-auto scrollbar-hide">
+          <div className="flex items-center space-x-1 py-3 overflow-x-auto scrollbar-hide md:justify-center">
             {gameCategories.map((category) => (
               <Link
                 key={category.id}
@@ -167,7 +173,7 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Mobile Theme Toggle and Language Selector */}
+            {/* Mobile Theme Toggle */}
             <div className="pt-4 border-t border-border space-y-3">
               <button
                 onClick={toggleTheme}
@@ -192,19 +198,6 @@ export default function Header() {
                   </>
                 )}
               </button>
-
-              <select
-                className="w-full bg-card border border-border rounded-md px-3 py-2 text-sm text-foreground transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                style={{
-                  boxShadow: '0 0 0 1px rgba(91, 88, 255, 0.1)'
-                }}
-              >
-                <option value="en">🇺🇸 English</option>
-                <option value="es">🇪🇸 Español</option>
-                <option value="fr">🇫🇷 Français</option>
-                <option value="de">🇩🇪 Deutsch</option>
-                <option value="it">🇮🇹 Italiano</option>
-              </select>
             </div>
           </div>
         </div>
