@@ -73,7 +73,7 @@ export default function CategoryPageClient({ category, categoryInfo, categoryGam
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 flex items-center justify-center">
             <span className="text-6xl mr-4">{categoryInfo.icon}</span>
-            {categoryInfo.name} Games
+            free online {categoryInfo.name} Games
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Explore our curated selection of {categoryInfo.name} games, featuring {categoryGames.length} exciting titles. Start playing now and enjoy endless fun!

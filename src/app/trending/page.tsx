@@ -89,7 +89,7 @@ export default function TrendingPage() {
           <div className="container-custom text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 flex items-center justify-center">
               <span className="text-6xl mr-4">📈</span>
-              Trending Games
+              Trending Games Now
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Discover the hottest trending games! These games are rapidly gaining popularity and loved by more and more players. Be the first to experience the next hit and become a trendsetter!

@@ -48,6 +48,11 @@ export default async function GamePage({ params }: GamePageProps) {
     howToPlay: string[];
     controls: string[];
     tips: string[];
+    videos?: Array<{
+      id: string;
+      title: string;
+      description: string;
+    }>;
   }> = {
     'shell-shockers': {
       description: 'Shell Shockers is a multiplayer FPS game featuring egg characters armed with weapons. Battle in various game modes including team battles, free-for-all, and capture the spatula.',
@@ -179,6 +184,54 @@ export default async function GamePage({ params }: GamePageProps) {
         'Don\'t panic - stay calm under the 60-second pressure',
         'Each day gets progressively more challenging'
       ]
+    },
+    'morse': {
+      description: "MORSE is a minimalist yet highly creative strategy game inspired by WWI telegraph communication systems. You'll use just two buttons—simulating Morse code dots and dashes—to send artillery commands and repel the German fleet's midnight assault. Navigate letter-based coordinate grids using the lost language of Morse Code to illuminate enemy positions and rain down artillery shells. Can you change the world with the push of a button?",
+      howToPlay: [
+        'Identify enemy ships hidden under letter coordinates on the grid',
+        'Input target coordinates using Morse code (dots and dashes)',
+        'Use short taps for dots (.) and long holds for dashes (-)',
+        'Fire artillery shells to illuminate and damage enemy vessels',
+        'Manage your ammunition wisely - shells auto-replenish slowly',
+        'Deploy sea mines to block advancing enemy ships',
+        'Choose upgrades between waves to enhance your arsenal',
+        'Survive until dawn by controlling the battlefield strategically'
+      ],
+      controls: [
+        'Click/Tap - Input Morse code (short for dot, long for dash)',
+        'Spacebar - Alternative Morse input button',
+        'Second Button - Confirm letter and fire artillery',
+        'Help Sheet - View Morse code reference table',
+        'Mouse - Navigate menus and interface',
+        'ESC - Pause game (if available)'
+      ],
+      tips: [
+        'Start with basic letters: E (.), T (-), A (.-), then expand gradually',
+        'Prioritize center area attacks for maximum damage and reconnaissance',
+        'Hit ship centers to permanently reveal them in the darkness',
+        'Use mines effectively to conserve artillery ammunition',
+        'Balance reconnaissance upgrades vs. offensive firepower',
+        'Don\'t waste shots - wait for key tactical moments',
+        'Learn the rhythm: each wave uses isogram words for coordinates',
+        'Practice Morse patterns - muscle memory is crucial for survival'
+      ],
+      videos: [
+        {
+          id: 'H49PBxdMlLY',
+          title: 'MORSE Gameplay Trailer',
+          description: 'Watch the official gameplay trailer showcasing the unique Morse code mechanics and WWI naval warfare.'
+        },
+        {
+          id: 'ZfP5D6UTV48',
+          title: 'Build Your Own Telegraph Controller',
+          description: 'Learn how to create a custom telegraph controller for an authentic MORSE gaming experience.'
+        },
+        {
+          id: 'zDgqka4rjJE',
+          title: 'MORSE Expo Trailer',
+          description: 'See MORSE in action at gaming exhibitions with custom hardware controllers and live gameplay.'
+        }
+      ]
     }
   };
 
@@ -255,91 +308,396 @@ export default async function GamePage({ params }: GamePageProps) {
           <GamePlayer game={game} gameUrl={gameUrl} />
         </div>
 
-        {/* Game Information Area */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {/* Left Column: Game Tags */}
-          <div className="lg:col-span-1">
-            <div className="bg-card border border-border rounded-xl p-6 mb-6">
+        {/* Game Information Area - Enhanced Design for MORSE */}
+        {game.id === 'morse' ? (
+          // Special enhanced layout for MORSE game
+          <div className="space-y-8 mb-12">
+            {/* Hero Quote Section */}
+            <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border border-border rounded-xl p-8 text-center">
+              <blockquote className="text-2xl font-bold text-foreground mb-2">
+                "Change the world with the push of a button."
+              </blockquote>
+              <p className="text-muted-foreground">
+                Experience the lost art of telegraphy in this WWI-inspired strategy game
+              </p>
+            </div>
+
+            {/* Game Overview */}
+            <div className="bg-card border border-border rounded-xl p-8">
+              <div className="flex items-center mb-6">
+                <span className="text-3xl mr-3">🧭</span>
+                <h2 className="text-2xl font-bold text-foreground">Game Overview</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    MORSE is a minimalist yet highly creative strategy game inspired by WWI telegraph communication systems. 
+                    You'll use just two buttons—simulating Morse code dots and dashes—to send artillery commands and repel 
+                    the German fleet's midnight assault.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <span className="w-2 h-2 bg-primary rounded-full"></span>
+                      <span className="text-sm text-muted-foreground">HTML5 / Steam Platform</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <span className="w-2 h-2 bg-primary rounded-full"></span>
+                      <span className="text-sm text-muted-foreground">Keyboard, mouse, gamepad compatible</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <span className="w-2 h-2 bg-primary rounded-full"></span>
+                      <span className="text-sm text-muted-foreground">Supports cooperative play</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <span className="w-2 h-2 bg-primary rounded-full"></span>
+                      <span className="text-sm text-muted-foreground">Custom USB telegraph controllers supported</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="bg-muted/30 rounded-lg p-6">
+                    <h3 className="font-semibold text-foreground mb-4 flex items-center">
+                      <span className="text-yellow-500 mr-2">🏆</span>
+                      Awards & Recognition
+                    </h3>
+                    <div className="space-y-2 text-sm text-muted-foreground">
+                      <div>🏅 Tokyo Game Show (TGS) Experimental Design Award</div>
+                      <div>🏅 Busan BIC Indie Connect Excellence in Innovation</div>
+                      <div>🎮 Indiecade Official Selection</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Controls & Core Gameplay */}
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="bg-card border border-border rounded-xl p-6">
+                <div className="flex items-center mb-6">
+                  <span className="text-2xl mr-3">🕹️</span>
+                  <h2 className="text-xl font-bold text-foreground">Controls</h2>
+                </div>
+                <div className="space-y-4">
+                  {gameInfo.controls.map((control, index) => (
+                    <div key={`control-${index}`} className="flex items-start space-x-3 p-3 bg-muted/20 rounded-lg">
+                      <span className="w-6 h-6 bg-primary/20 text-primary rounded flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                        {index + 1}
+                      </span>
+                      <span className="text-sm text-muted-foreground">{control}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
+                  <p className="text-sm text-yellow-700 dark:text-yellow-300">
+                    ⚠️ <strong>Beginner Tip:</strong> Start with basic letters like E (.), T (-), A (.-), then gradually master more characters.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-xl p-6">
+                <div className="flex items-center mb-6">
+                  <span className="text-2xl mr-3">📦</span>
+                  <h2 className="text-xl font-bold text-foreground">Core Gameplay</h2>
+                </div>
+                <div className="space-y-4">
+                  <div className="p-4 bg-muted/20 rounded-lg">
+                    <h3 className="font-semibold text-foreground mb-2">🔍 Step-by-Step Process:</h3>
+                    <ol className="text-sm text-muted-foreground space-y-2">
+                      <li>1. <strong>Identify target position:</strong> Enemy ships hide under letter coordinates</li>
+                      <li>2. <strong>Input Morse code:</strong> Use dots and dashes to spell coordinates</li>
+                      <li>3. <strong>Fire artillery:</strong> Illuminate and damage enemy vessels</li>
+                      <li>4. <strong>Manage ammunition:</strong> Shells auto-replenish slowly</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How to Play */}
+            <div className="bg-card border border-border rounded-xl p-8">
+              <div className="flex items-center mb-6">
+                <span className="text-3xl mr-3">🎯</span>
+                <h2 className="text-2xl font-bold text-foreground">How to Play</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  {gameInfo.howToPlay.slice(0, 4).map((step, index) => (
+                    <div key={`step-${index}`} className="flex items-start space-x-4 p-4 bg-muted/20 rounded-lg">
+                      <span className="bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        {index + 1}
+                      </span>
+                      <span className="text-muted-foreground">{step}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-4">
+                  {gameInfo.howToPlay.slice(4).map((step, index) => (
+                    <div key={`step-${index + 4}`} className="flex items-start space-x-4 p-4 bg-muted/20 rounded-lg">
+                      <span className="bg-secondary text-secondary-foreground w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        {index + 5}
+                      </span>
+                      <span className="text-muted-foreground">{step}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Tactical Essentials */}
+            <div className="bg-card border border-border rounded-xl p-8">
+              <div className="flex items-center mb-6">
+                <span className="text-3xl mr-3">🔥</span>
+                <h2 className="text-2xl font-bold text-foreground">Tactical Essentials</h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-muted/20 rounded-lg p-6">
+                  <h3 className="font-semibold text-foreground mb-3 flex items-center">
+                    <span className="text-lg mr-2">🌘</span>
+                    Darkness Strategy
+                  </h3>
+                  <ul className="text-sm text-muted-foreground space-y-2">
+                    <li>• Ships start hidden in darkness</li>
+                    <li>• First strike illuminates area</li>
+                    <li>• Center hits reveal permanently</li>
+                  </ul>
+                </div>
+                <div className="bg-muted/20 rounded-lg p-6">
+                  <h3 className="font-semibold text-foreground mb-3 flex items-center">
+                    <span className="text-lg mr-2">🚢</span>
+                    Enemy Patterns
+                  </h3>
+                  <ul className="text-sm text-muted-foreground space-y-2">
+                    <li>• Waves use isogram words</li>
+                    <li>• Difficulty increases gradually</li>
+                    <li>• New ship types appear</li>
+                  </ul>
+                </div>
+                <div className="bg-muted/20 rounded-lg p-6">
+                  <h3 className="font-semibold text-foreground mb-3 flex items-center">
+                    <span className="text-lg mr-2">💣</span>
+                    Mine System
+                  </h3>
+                  <ul className="text-sm text-muted-foreground space-y-2">
+                    <li>• Deploy strategic blockades</li>
+                    <li>• Upgrade for timed detonators</li>
+                    <li>• Early warning capabilities</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Pro Tips */}
+            <div className="bg-card border border-border rounded-xl p-8">
+              <div className="flex items-center mb-6">
+                <span className="text-3xl mr-3">💡</span>
+                <h2 className="text-2xl font-bold text-foreground">Pro Tips & Strategy Guide</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <h3 className="font-semibold text-foreground">🎯 Combat Strategy</h3>
+                  <div className="space-y-3">
+                    {gameInfo.tips.slice(0, 4).map((tip, index) => (
+                      <div key={`tip-${index}`} className="flex items-start space-x-3 p-3 bg-blue-500/10 rounded-lg">
+                        <span className="text-blue-500 flex-shrink-0">•</span>
+                        <span className="text-sm text-muted-foreground">{tip}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="font-semibold text-foreground">🧠 Advanced Techniques</h3>
+                  <div className="space-y-3">
+                    {gameInfo.tips.slice(4).map((tip, index) => (
+                      <div key={`tip-${index + 4}`} className="flex items-start space-x-3 p-3 bg-green-500/10 rounded-lg">
+                        <span className="text-green-500 flex-shrink-0">•</span>
+                        <span className="text-sm text-muted-foreground">{tip}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Player Reviews */}
+            <div className="bg-card border border-border rounded-xl p-8">
+              <div className="flex items-center mb-6">
+                <span className="text-3xl mr-3">💬</span>
+                <h2 className="text-2xl font-bold text-foreground">Player Experience Reviews</h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-muted/20 rounded-lg p-6">
+                  <div className="flex items-center mb-3">
+                    <span className="text-2xl mr-2">🎧</span>
+                    <div className="flex text-yellow-400">
+                      {"★".repeat(5)}
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground italic">
+                    "Simple yet tension-filled, minimalist graphics paired with subtle music create an atmosphere of both anxiety and calm."
+                  </p>
+                </div>
+                <div className="bg-muted/20 rounded-lg p-6">
+                  <div className="flex items-center mb-3">
+                    <span className="text-2xl mr-2">💡</span>
+                    <div className="flex text-yellow-400">
+                      {"★".repeat(5)}
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground italic">
+                    "Truly makes 'control scheme' the core of gameplay."
+                  </p>
+                </div>
+                <div className="bg-muted/20 rounded-lg p-6">
+                  <div className="flex items-center mb-3">
+                    <span className="text-2xl mr-2">🥰</span>
+                    <div className="flex text-yellow-400">
+                      {"★".repeat(5)}
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground italic">
+                    "Had zero interest in this theme initially, but couldn't stop playing once I started."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Game Tags */}
+            <div className="bg-card border border-border rounded-xl p-6">
               <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
                 <span className="text-primary mr-2">🏷️</span>
                 Game Tags
               </h2>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {game.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-primary/15 text-primary border border-primary/30 rounded-md text-sm font-medium"
+                    className="px-4 py-2 bg-gradient-to-r from-primary/15 to-secondary/15 text-primary border border-primary/30 rounded-full text-sm font-medium hover:scale-105 transition-transform"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
-
-            {/* Controls */}
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
-                <span className="text-accent mr-2">⌨️</span>
-                Controls
-              </h2>
-              <div className="space-y-2">
-                {gameInfo.controls.map((control, index) => (
-                  <div key={`control-${index}-${control.slice(0, 10)}`} className="bg-muted/30 p-2 rounded-md">
-                    <span className="text-xs text-muted-foreground">{control}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
-
-          {/* Middle and Right Columns: Game Introduction and Gameplay */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Game Description */}
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
-                <span className="text-primary mr-2">📖</span>
-                Game Description
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {gameInfo.description}
-              </p>
-            </div>
-
-            {/* How to Play */}
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
-                <span className="text-secondary mr-2">🎯</span>
-                How to Play
-              </h2>
-              <ul className="space-y-3">
-                {gameInfo.howToPlay.map((step, index) => (
-                  <li key={`step-${index}-${step.slice(0, 10)}`} className="flex items-start space-x-3">
-                    <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
-                      {index + 1}
+        ) : (
+          // Original layout for other games
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            {/* Left Column: Game Tags */}
+            <div className="lg:col-span-1">
+              <div className="bg-card border border-border rounded-xl p-6 mb-6">
+                <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
+                  <span className="text-primary mr-2">🏷️</span>
+                  Game Tags
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {game.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 bg-primary/15 text-primary border border-primary/30 rounded-md text-sm font-medium"
+                    >
+                      {tag}
                     </span>
-                    <span className="text-muted-foreground">{step}</span>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </div>
+              </div>
+
+              {/* Controls */}
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
+                  <span className="text-accent mr-2">⌨️</span>
+                  Controls
+                </h2>
+                <div className="space-y-2">
+                  {gameInfo.controls.map((control, index) => (
+                    <div key={`control-${index}-${control.slice(0, 10)}`} className="bg-muted/30 p-2 rounded-md">
+                      <span className="text-xs text-muted-foreground">{control}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            {/* Tips */}
+            {/* Middle and Right Columns: Game Introduction and Gameplay */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Game Description */}
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
+                  <span className="text-primary mr-2">📖</span>
+                  Game Description
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {gameInfo.description}
+                </p>
+              </div>
+
+              {/* How to Play */}
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
+                  <span className="text-secondary mr-2">🎯</span>
+                  How to Play
+                </h2>
+                <ul className="space-y-3">
+                  {gameInfo.howToPlay.map((step, index) => (
+                    <li key={`step-${index}-${step.slice(0, 10)}`} className="flex items-start space-x-3">
+                      <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
+                        {index + 1}
+                      </span>
+                      <span className="text-muted-foreground">{step}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Tips */}
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
+                  <span className="text-secondary mr-2">💡</span>
+                  Tips
+                </h2>
+                <div className="space-y-2">
+                  {gameInfo.tips.map((tip, index) => (
+                    <div key={`tip-${index}-${tip.slice(0, 10)}`} className="flex items-start space-x-2">
+                      <span className="text-secondary">•</span>
+                      <span className="text-muted-foreground">{tip}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Game Videos - Only show for games that have videos */}
+        {gameInfo.videos && gameInfo.videos.length > 0 && (
+          <div className="mb-12">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h2 className="text-lg font-bold text-foreground mb-4 flex items-center">
-                <span className="text-secondary mr-2">💡</span>
-                Tips
+              <h2 className="text-lg font-bold text-foreground mb-6 flex items-center">
+                <span className="text-primary mr-2">🎥</span>
+                Game Videos
               </h2>
-              <div className="space-y-2">
-                {gameInfo.tips.map((tip, index) => (
-                  <div key={`tip-${index}-${tip.slice(0, 10)}`} className="flex items-start space-x-2">
-                    <span className="text-secondary">•</span>
-                    <span className="text-muted-foreground">{tip}</span>
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                {gameInfo.videos.map((video, index) => (
+                  <div key={video.id} className="space-y-3">
+                    <div className="relative w-full pt-[56.25%] bg-muted rounded-lg overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${video.id}`}
+                        title={video.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute top-0 left-0 w-full h-full"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="font-semibold text-foreground text-sm">{video.title}</h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{video.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Game Rating and Reviews */}
         <div className="mb-12">

@@ -254,6 +254,16 @@ export const games: Game[] = [
     html5Url: "https://html-classic.itch.zone/html/13126325/index.html",
     trending: true
   },
+  {
+    id: "morse",
+    title: "MORSE",
+    image: "/games/morse.png",
+    tags: ["historical", "minimalist", "pixel art", "strategy", "tower defense", "typing", "morse code", "world war i"],
+    category: "puzzle",
+    href: "/play/morse",
+    html5Url: "https://html-classic.itch.zone/html/14201568/index.html",
+    featured: true
+  },
 
   {
     id: "krunker",
